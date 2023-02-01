@@ -16,10 +16,10 @@ public class Main {
             add(hamideh);
             add(ana);
         }};*/
-        Map<Integer,String> studentList = new HashMap<>();
-        studentList.put(hamideh.getId(), hamideh.getName());
-        studentList.put(ana.getId(), ana.getName());
-        studentList.put(daniel.getId(), daniel.getName());
+        Map<Integer,Student> studentList = new HashMap<>();
+        studentList.put(hamideh.getId(), hamideh);
+        studentList.put(ana.getId(), ana);
+        studentList.put(daniel.getId(), daniel);
 
 
         StudentDB database = new StudentDB(studentList);

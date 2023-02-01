@@ -7,13 +7,13 @@ import java.util.Map;
 
 public class StudentDB {
 
-    private Map<Integer,String> studentList;
+    private Map<Integer,Student> studentList;
 
-    public StudentDB(Map<Integer, String> studentList) {
+    public StudentDB(Map<Integer, Student> studentList) {
         this.studentList = studentList;
     }
 
-    public Map<Integer,String> getAllStudents(){
+    public Map<Integer,Student> getAllStudents(){
         return studentList;
     }
 
@@ -24,7 +24,7 @@ public class StudentDB {
                 '}';
     }
 
-    public String randomStudent(){
+    public Student randomStudent(){
         List<Integer> possibleKeys = new ArrayList<>();
         for ( Integer key : studentList.keySet() ) {
             possibleKeys.add( key );
@@ -41,7 +41,7 @@ public class StudentDB {
     */
 
     public void addStudent(Student newStudent){
-        studentList.put(newStudent.getId(), newStudent.getName());
+        studentList.put(newStudent.getId(), newStudent);
     }
 
     public void removeStudent(Student exStudent){
