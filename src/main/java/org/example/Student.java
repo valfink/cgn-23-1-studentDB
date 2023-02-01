@@ -10,6 +10,10 @@ public class Student {
         this.name = name;
         this.id = id;
     }
+    public Student(String name, int id) {
+        this.name = name;
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -32,23 +36,35 @@ public class Student {
         return "Student{" +
                 "name='" + name + '\'' +
                 ", id=" + id +
+                ", birthday=" + birthday +
                 '}';
     }
-
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Student student)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
 
-        if (getId() != student.getId()) return false;
-        return getName() != null ? getName().equals(student.getName()) : student.getName() == null;
+        Student student = (Student) o;
+
+        if (id != student.id) return false;
+        if (!Objects.equals(name, student.name)) return false;
+        return Objects.equals(birthday, student.birthday);
     }
 
     @Override
     public int hashCode() {
-        int result = getName() != null ? getName().hashCode() : 0;
-        result = 31 * result + getId();
+        int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + id;
+        result = 31 * result + (birthday != null ? birthday.hashCode() : 0);
         return result;
+    }
+
+    public LocalDate getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(LocalDate birthday) {
+        this.birthday = birthday;
     }
 }

@@ -3,10 +3,8 @@ package org.example;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.platform.commons.function.Try;
 
 import java.util.HashMap;
-import java.util.Map;
 import java.util.NoSuchElementException;
 
 public class StudentDBTest {
