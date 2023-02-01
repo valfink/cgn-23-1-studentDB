@@ -56,7 +56,7 @@ public class StudentDBTest {
             studentDB.findById(9);
         }, "Expected exception");
         // THEN
-        Assertions.assertEquals("Student does not exist", e.getMessage());
+        Assertions.assertEquals("Student with id 9 does not exist", e.getMessage());
     }
 }
 
