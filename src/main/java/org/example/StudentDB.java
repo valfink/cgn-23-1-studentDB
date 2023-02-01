@@ -1,9 +1,6 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class StudentDB {
 
@@ -48,4 +45,12 @@ public class StudentDB {
         studentList.remove(exStudent);
     }
 
+    public Student findById(int id) {
+        for (Student student : studentList.values()) {
+            if (student.getId() == id) {
+                return student;
+            }
+        }
+        throw new NoSuchElementException("Student with id " + id + " does not exist");
+    }
 }
