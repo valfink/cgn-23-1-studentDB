@@ -1,26 +1,17 @@
 package org.example;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import java.time.LocalDate;
 
 import static java.time.temporal.ChronoUnit.DAYS;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class Student {
-
-    private String name;
-    private int id;
-    private LocalDate birthday;
-
-    // Constructor with only two arguments, not provided by Lombok
+public record Student(
+        String name,
+        int id,
+        LocalDate birthday
+) {
+    // Constructor with only two arguments, not provided by Record
     public Student(String name, int id) {
-        this.name = name;
-        this.id = id;
+        this(name, id, null);
     }
 
     public String howLongUntilBirthday() {

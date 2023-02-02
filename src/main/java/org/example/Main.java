@@ -17,9 +17,9 @@ public class Main {
             add(ana);
         }};*/
         Map<Integer,Student> studentList = new HashMap<>();
-        studentList.put(hamideh.getId(), hamideh);
-        studentList.put(ana.getId(), ana);
-        studentList.put(daniel.getId(), daniel);
+        studentList.put(hamideh.id(), hamideh);
+        studentList.put(ana.id(), ana);
+        studentList.put(daniel.id(), daniel);
 
 
         StudentDB database = new StudentDB(studentList);

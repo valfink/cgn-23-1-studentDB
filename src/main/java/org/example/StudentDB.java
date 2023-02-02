@@ -29,7 +29,7 @@ public class StudentDB {
     }
 
     public void addStudent(Student newStudent){
-        studentList.put(newStudent.getId(), newStudent);
+        studentList.put(newStudent.id(), newStudent);
     }
 
     public void removeStudent(Student exStudent){
@@ -38,7 +38,7 @@ public class StudentDB {
 
     public Student findById(int id) {
         for (Student student : studentList.values()) {
-            if (student.getId() == id) {
+            if (student.id() == id) {
                 return student;
             }
         }
