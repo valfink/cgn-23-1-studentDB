@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 import java.util.NoSuchElementException;
+import java.util.Optional;
 
 public class StudentDBTest {
     // GIVEN
@@ -35,26 +36,29 @@ public class StudentDBTest {
     @Test
     void testFindById_successful() {
          // WHEN
-        Student resultingStudent;
-
-        try{
-            resultingStudent = studentDB.findById(1);
-        }catch(Exception e){
-            resultingStudent=null;
-        }
+        Optional<Student> resultingStudent = studentDB.findById(1);
 
         // THEN
-        Assertions.assertEquals(s1, resultingStudent);
+        Assertions.assertEquals(s1, resultingStudent.orElse(null));
     }
+
+//    Version of Test with Exception Assertion, but Method has been changed to Optional!
+//    @Test
+//    void testFindById_NotFound() {
+//         // WHEN
+//        Exception e = Assertions.assertThrows(NoSuchElementException.class, () -> {
+//            studentDB.findById(9);
+//        }, "Expected exception");
+//        // THEN
+//        Assertions.assertEquals("Student with id 9 does not exist", e.getMessage());
+//    }
 
     @Test
     void testFindById_NotFound() {
          // WHEN
-        Exception e = Assertions.assertThrows(NoSuchElementException.class, () -> {
-            studentDB.findById(9);
-        }, "Expected exception");
+        Optional<Student> resultingStudent = studentDB.findById(100);
         // THEN
-        Assertions.assertEquals("Student with id 9 does not exist", e.getMessage());
+        Assertions.assertNull(resultingStudent.orElse(null));
     }
 
 

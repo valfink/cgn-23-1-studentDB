@@ -36,12 +36,12 @@ public class StudentDB {
         studentList.remove(exStudent);
     }
 
-    public Student findById(int id) {
+    public Optional<Student> findById(int id) {
         for (Student student : studentList.values()) {
             if (student.id() == id) {
-                return student;
+                return Optional.ofNullable(student);
             }
         }
-        throw new NoSuchElementException("Student with id " + id + " does not exist");
+        return Optional.empty();
     }
 }
