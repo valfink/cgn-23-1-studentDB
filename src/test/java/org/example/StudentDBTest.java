@@ -61,21 +61,3 @@ public class StudentDBTest {
 
 
 }
-
-//    @Test
-//    void testExpectedException() {
-//
-//        NumberFormatException thrown = Assertions.assertThrows(NumberFormatException.class, () -> {
-//            Integer.parseInt("One");
-//        }, "NumberFormatException was expected");
-//
-//        Assertions.assertEquals("For input string: \"One\"", thrown.getMessage());
-//    }
-
-//    Map<String, Integer> hashMap = new HashMap<String, Integer>()
-//    {{
-//        put("One", 1);
-//        put("Two", 2);
-//        put("Three", 3);
-//    }};
-
